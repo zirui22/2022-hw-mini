@@ -4,11 +4,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
   message(FATAL_ERROR "In-source builds are not allowed.")
 endif()
 
-if(NOT DEFINED PICO_SDK_PATH AND DEFINED ENV{PICO_SDK_PATH})
-  set(PICO_SDK_PATH $ENV{PICO_SDK_PATH})
-endif()
-
-if(NOT DEFINED PICO_SDK_PATH)
+if(NOT DEFINED PICO_SDK_PATH AND NOT DEFINED ENV{PICO_SDK_PATH})
   message(FATAL_ERROR "Need to specify pico-sdk path like:
   cmake -B build -DPICO_SDK_PATH=/path/to/pico-sdk")
 endif()
