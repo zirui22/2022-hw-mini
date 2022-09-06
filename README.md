@@ -4,6 +4,7 @@ This project assumes you have installed
 [CMake, Git, and C/C++ cross-compiler](./doc/compiler.md).
 This example project downloads the Pico SDK automatically.
 Optionally, you can download [Pico SDK manually](./doc/pico-sdk.md).
+The code examples here generally come from https://github.com/raspberrypi/pico-examples.
 
 Configure the CMake project once, unless changing an option or doing a major change to code:
 

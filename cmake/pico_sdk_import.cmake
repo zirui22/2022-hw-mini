@@ -3,7 +3,8 @@
 # This can be dropped into an external project to help locate this SDK
 # It should be include()ed prior to project()
 
-set(pico_sdk_tag 1.4.0)
+set(pico_sdk_tag 0041f4b7fd3d6d7c92594d866db6fee2360c776f)
+# 1.4.0 has a USB UART bug
 
 set(FETCHCONTENT_UPDATE_DISCONNECTED ON)
 set(FETCHCONTENT_QUIET OFF)
