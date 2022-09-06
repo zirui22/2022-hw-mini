@@ -35,7 +35,4 @@ endif()
 pico_sdk_init()
 
 # we put each example in a subdirectory for clarity
-add_subdirectory(blink)
-add_subdirectory(hello_usb)
-add_subdirectory(led_fade)
-add_subdirectory(onboard_temperature)
+add_subdirectory(src)
