@@ -1,8 +1,9 @@
 # 2022 Hardware Miniproject
 
 This project assumes you have installed
-[CMake, Git, and C/C++ cross-compiler](./doc/compiler.md) and
-[download the Pico SDK](./doc/pico-sdk.md).
+[CMake, Git, and C/C++ cross-compiler](./doc/compiler.md).
+This example project downloads the Pico SDK automatically.
+Optionally, you can download [Pico SDK manually](./doc/pico-sdk.md).
 
 Configure the CMake project once, unless changing an option or doing a major change to code:
 
