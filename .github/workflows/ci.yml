@@ -1,5 +1,8 @@
 name: ci
 
+env:
+    HOMEBREW_NO_INSTALL_CLEANUP: 1
+
 on:
   push:
     paths:
@@ -12,16 +15,27 @@ jobs:
 
   linux:
     timeout-minutes: 15
-    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: "install ARM GCC"
+    - name: "install ARM GCC (Linux)"
+      if: runner.os == 'Linux'
       run: |
         sudo apt-get update
         sudo apt-get install -yq gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
 
+    - name: "install ARM GCC (macOS)"
+      if: runner.os == 'macOS'
+      run: |
+        brew tap ArmMbed/homebrew-formulae
+        brew install arm-none-eabi-gcc
 
     - name: "CMake configure"
       run: cmake -Bbuild -DCMAKE_BUILD_TYPE=Release
