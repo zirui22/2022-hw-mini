@@ -29,13 +29,28 @@ Almost all laptops have a USB-C or USB-A port.
 Some USB cables don't have the data pins connected, though this is uncommon nowadays.
 Suitable USB cables can be obtained from Microcenter or online.
 
-Connect the microUSB to the Pico.
+Connect the micro-USB to the Pico.
 Just before and as you plug the other end of the cable into your laptop, hold down the "BOOTSEL" button on the Pico.
-The Pico will appear as an external flash drive in the file browser of your laptop.
+The Pico will appear almost instantly (while holding down BOOTSEL) as an external flash drive in the file browser of your laptop.
+You can then release BOOTSEL button.
 
 ![bootsel switch](./doc/bootsel.png)
 
-Once the file is copied, unplug and replug in the Pico (without holding BOOTSEL) to run the program.
+Once the file is copied, the **Pico automatically reboots and runs the program**.
+
+### Windows
+
+Windows File Explorer will show the Pico under "This PC" "RPI-RP2".
+If you don't see it, check in Device Manager: "Disk drives", "RPI RP2 USB Device".
+
+### macOS
+
+The Pico will appear on the Desktop as RPI-RP2 with a grey box icon.
+
+### Linux
+
+On Linux, the Pico will typically in the distro file explorer as "RPI_RP2", whether using a full Raspberry Pi or Linux laptop.
+The exact device path varies between Linux distros if looking to use Terminal, use `lsblk` to find the mount point.
 
 ## MicroPython
 
