@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+    paths:
+    - "**/CMakeLists.txt"
+    - "**.cmake"
+    - "**.c"
+    - ".github/workflows/ci.yml"
+
+jobs:
+
+  linux:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: "install ARM GCC"
+      run: |
+        sudo apt-get update
+        sudo apt-get install -yq gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+
+
+    - name: "CMake configure"
+      run: cmake -Bbuild -DCMAKE_BUILD_TYPE=Release
+
+    - name: "CMake build"
+      run: cmake --build build --parallel
