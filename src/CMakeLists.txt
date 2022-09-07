@@ -5,3 +5,5 @@ add_subdirectory(hello_usb)
 add_subdirectory(led_fade)
 
 add_subdirectory(onboard_temperature)
+
+add_subdirectory(pio/addition)
