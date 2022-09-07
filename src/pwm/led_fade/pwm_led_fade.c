@@ -39,7 +39,7 @@ void on_pwm_wrap() {
 }
 #endif
 
-int main() {
+int main(void) {
 #ifndef PICO_DEFAULT_LED_PIN
 #warning pwm/led_fade example requires a board with a regular LED
 #else

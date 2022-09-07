@@ -18,7 +18,7 @@ uint32_t do_addition(PIO pio, uint sm, uint32_t a, uint32_t b) {
     return pio_sm_get_blocking(pio, sm);
 }
 
-int main() {
+int main(void) {
     stdio_init_all();
 
     PIO pio = pio0;
