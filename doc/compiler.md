@@ -25,7 +25,10 @@ Rosetta enables most x86 apps on Apple Silicon at nearly full performance.
 
 ## Linux
 
-Both WSL Ubuntu and ordinary native Linux distros install Git, CMake, the cross-compiler, and libraries the same way:
+This install command gives Git, CMake, the cross-compiler, and libraries for:
+
+* laptop/desktop with: WSL Ubuntu, Ubuntu/Debian-like distros
+* full Raspberry Pi (e.g. Raspberry Pi 4)
 
 ```sh
 sudo apt update
