@@ -5,7 +5,10 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
 endif()
 
 set(PICO_SDK_FETCH_FROM_GIT true)
-set(PICO_PLATFORM "rp2040")
+set(PICO_PLATFORM rp2040)
+
+set(PICO_BOARD pico)
+# set(PICO_BOARD pico_w)
 
 # initialize the SDK based on PICO_SDK_PATH
 # note: this must happen before project()

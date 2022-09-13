@@ -7,6 +7,11 @@
 # set(pico_sdk_tag 0041f4b7fd3d6d7c92594d866db6fee2360c776f)
 set(pico_sdk_tag 1.4.0)
 
+set(pico_sdk_submod lib/tinyusb)
+if(PICO_BOARD STREQUAL "pico_w")
+  list(APPEND pico_sdk_submod lib/cyw43-driver lib/lwip)
+endif()
+
 set(FETCHCONTENT_UPDATE_DISCONNECTED ON)
 set(FETCHCONTENT_QUIET OFF)
 
@@ -40,7 +45,7 @@ if (NOT PICO_SDK_PATH)
             pico_sdk
             GIT_REPOSITORY https://github.com/raspberrypi/pico-sdk
             GIT_TAG ${pico_sdk_tag}
-            GIT_SUBMODULES "lib/tinyusb"
+            GIT_SUBMODULES ${pico_sdk_submod}
             GIT_SHALLOW true
             TLS_VERIFY true
             GIT_SUBMODULES_RECURSE false
