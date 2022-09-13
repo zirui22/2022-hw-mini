@@ -35,6 +35,9 @@ sudo apt update
 sudo apt install git make cmake g++ gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
 ```
 
+NOTE: if upon `cmake -B build` you get an immediate error about CMake being too old,
+please install a newer CMake via [scripts/install_cmake_linux.sh](../scripts/install_cmake_linux.sh)
+
 ## Windows
 
 The Visual Studio cross-compiler setup is described in Section 9.2 of the
