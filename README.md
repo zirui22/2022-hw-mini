@@ -2,6 +2,12 @@
 
 [![ci](https://github.com/BostonUniversitySeniorDesign/2022-hw-mini/actions/workflows/ci.yml/badge.svg)](https://github.com/BostonUniversitySeniorDesign/2022-hw-mini/actions/workflows/ci.yml)
 
+---
+
+[Miniproject assignment](./assignment.md)
+
+---
+
 This project assumes you have installed
 [CMake, Git, and C/C++ cross-compiler](./doc/compiler.md).
 This example project downloads the Pico SDK automatically.
