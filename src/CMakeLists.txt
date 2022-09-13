@@ -9,3 +9,5 @@ add_subdirectory(adc/hello_adc)
 add_subdirectory(adc/onboard_temperature)
 
 add_subdirectory(pio/addition)
+add_subdirectory(pio/pio_blink)
+add_subdirectory(pio/pwm)

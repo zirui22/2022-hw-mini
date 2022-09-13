@@ -1,0 +1,19 @@
+add_executable(pio_blink)
+
+# by default the header is generated into the build dir
+pico_generate_pio_header(pio_blink ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
+# however, alternatively you can choose to generate it somewhere else (in this case in the source tree for check in)
+#pico_generate_pio_header(pio_blink ${CMAKE_CURRENT_LIST_DIR}/blink.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR})
+
+target_sources(pio_blink PRIVATE blink.c)
+
+target_link_libraries(pio_blink PRIVATE pico_stdlib hardware_pio)
+pico_add_extra_outputs(pio_blink)
+
+if(TARGET tinyusb_device)
+  # enable USB output, disable UART output
+  pico_enable_stdio_usb(pio_blink 1)
+  pico_enable_stdio_uart(pio_blink 0)
+elseif(PICO_ON_DEVICE)
+  message(STATUS "pio_blink build without USB terminal output")
+endif()
