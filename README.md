@@ -14,7 +14,19 @@ Configure the CMake project once, unless changing an option or doing a major cha
 cmake -B build
 ```
 
-Then we can pick a particular code "target" to build like:
+If you have a Pico W wireless board (has a 1 cm gray metal square opposite micro USB jack) use command:
+
+```sh
+cmake -B build -DPICO_BOARD=pico_w
+```
+
+This command builds all targets:
+
+```sh
+cmake --build build
+```
+
+Or, one can pick a particular code "target" to build like:
 
 ```sh
 cmake --build build -t blink
