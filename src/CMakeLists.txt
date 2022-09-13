@@ -10,6 +10,7 @@ add_subdirectory(pio/pio_blink)
 if(PICO_BOARD STREQUAL "pico_w")
   # Pico W wireless model accesses the LED distinctly from the non-W model
   add_subdirectory(pico_w/blink)
+  add_subdirectory(pico_w/wifi_scan)
 else()
   # non-wireless Pico
   add_subdirectory(blink)
