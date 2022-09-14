@@ -10,7 +10,8 @@
 // An interrupt handler updates the PWM slice's output level each time the counter wraps.
 
 #include "pico/stdlib.h"
-#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 #include "pico/time.h"
 #include "hardware/irq.h"
 #include "hardware/pwm.h"
@@ -19,23 +20,26 @@
 #error pwm/led_fade example requires a board with a regular LED
 #endif
 
+#define MAX_LED_BRIGHTNESS 255
+#define MIN_LED_BRIGHTNESS 0
+
 void on_pwm_wrap() {
 // this is the interrupt handler, called each time the PWM counter wraps
-    static int fade = 0;
+    static uint16_t fade = 0;
     static bool going_up = true;
     // Clear the interrupt flag that brought us here
     pwm_clear_irq(pwm_gpio_to_slice_num(PICO_DEFAULT_LED_PIN));
 
     if (going_up) {
         ++fade;
-        if (fade > 255) {
-            fade = 255;
+        if (fade > MAX_LED_BRIGHTNESS) {
+            fade = MAX_LED_BRIGHTNESS;
             going_up = false;
         }
     } else {
         --fade;
-        if (fade < 0) {
-            fade = 0;
+        if (fade < MIN_LED_BRIGHTNESS) {
+            fade = MIN_LED_BRIGHTNESS;
             going_up = true;
         }
     }
