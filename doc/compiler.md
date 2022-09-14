@@ -5,6 +5,7 @@ While it's possible to use a full Raspberry Pi to program the Pico, here we assu
 It's straightforward to install the 32-bit ARM C/C++ cross-compiler on popular operating systems.
 
 Please follow the section relevant to your laptop operating system.
+Note that about 2..5 gigabytes of hard drive space is required overall.
 
 ## macOS
 
@@ -44,8 +45,15 @@ The Visual Studio cross-compiler setup is described in Section 9.2 of the
 [Pico install guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf).
 We choose to use Windows Subsystem for Linux (WSL) instead, which is useful for many projects.
 Sometimes WSL is the only feasible way to work with non-Windows projects on Windows.
-https://docs.microsoft.com/en-us/windows/wsl/install describes the brief WSL install process.
-We suggest Ubuntu Linux distribution on WSL.
+[WSL install](https://docs.microsoft.com/en-us/windows/wsl/install) from Windows Commant Prompt:
+
+```sh
+wsl --install
+```
+
+This defaults to Ubuntu Linux distribution on WSL.
+This process takes 10-20 minutes depending on download speed.
+
 The cross-compiler install on WSL Ubuntu is just like plain Linux in the section above.
 
 To make switching between Windows and WSL easier, we generally use
