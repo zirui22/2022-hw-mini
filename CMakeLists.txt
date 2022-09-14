@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.17)
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
-  message(FATAL_ERROR "In-source builds are not allowed.")
+  message(FATAL_ERROR "In-source builds are not allowed. Specify build directory like:
+  cmake -Bbuild")
 endif()
 
-set(PICO_SDK_FETCH_FROM_GIT true)
 set(PICO_PLATFORM rp2040)
 
 if(NOT DEFINED PICO_BOARD)
@@ -15,7 +15,9 @@ endif()
 # note: this must happen before project()
 include(cmake/pico_sdk_import.cmake)
 
-project(pico_examples C CXX ASM)
+project(PicoExamples
+LANGUAGES C CXX ASM
+)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
