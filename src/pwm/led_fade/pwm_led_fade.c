@@ -44,7 +44,7 @@ void on_pwm_wrap() {
         }
     }
     // Square the fade value to make the LED's brightness appear more linear
-    // Note this range matches with the wrap value
+    // note uint16_t range (0-65535)
     pwm_set_gpio_level(PICO_DEFAULT_LED_PIN, fade * fade);
     //https://raspberrypi.github.io/pico-sdk-doxygen/group__hardware__pwm.html#ga279d1ba7dcc8f19619f389317efb41fd
 }
