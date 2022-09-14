@@ -22,6 +22,14 @@ Once the file is copied, the **Pico automatically reboots and runs the program**
 Windows File Explorer will show the Pico under "This PC" "RPI-RP2".
 If you don't see it, check in Device Manager: "Disk drives", "RPI RP2 USB Device".
 
+[WSL can use](https://docs.microsoft.com/en-us/windows/wsl/filesystems)
+the native Windows filesystem and vice versa.
+From Windows Command Prompt, see the WSL filesystem by:
+
+```pwsh
+explorer \\wsl$
+```
+
 ### macOS
 
 The Pico will appear on the Desktop as RPI-RP2 with a grey box icon.

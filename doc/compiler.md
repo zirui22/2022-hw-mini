@@ -54,6 +54,9 @@ wsl --install
 This defaults to Ubuntu Linux distribution on WSL.
 This process takes 10-20 minutes depending on download speed.
 
+[WSL can use](https://docs.microsoft.com/en-us/windows/wsl/filesystems)
+the native Windows filesystem and vice versa.
+
 The cross-compiler install on WSL Ubuntu is just like plain Linux in the section above.
 
 To make switching between Windows and WSL easier, we generally use
