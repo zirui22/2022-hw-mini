@@ -10,6 +10,11 @@
 #include "hardware/pio.h"
 #include "pwm.pio.h"
 
+
+#ifndef PICO_DEFAULT_LED_PIN
+#error pio/pwm example requires a board with a regular LED
+#endif
+
 // Write `period` to the input shift register
 void pio_pwm_set_period(PIO pio, uint sm, uint32_t period) {
     pio_sm_set_enabled(pio, sm, false);
@@ -26,10 +31,6 @@ void pio_pwm_set_level(PIO pio, uint sm, uint32_t level) {
 
 int main() {
     stdio_init_all();
-#ifndef PICO_DEFAULT_LED_PIN
-#warning pio/pwm example requires a board with a regular LED
-    puts("Default LED pin was not defined");
-#else
 
     // todo get free sm
     PIO pio = pio0;
@@ -47,5 +48,5 @@ int main() {
         level = (level + 1) % 256;
         sleep_ms(10);
     }
-#endif
+
 }
