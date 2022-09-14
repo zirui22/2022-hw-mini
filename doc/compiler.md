@@ -1,7 +1,6 @@
 # Cross-compiler install
 
 Microcontrollers generally use a different CPU architecture than your laptop.
-While it's possible to use a full Raspberry Pi to program the Pico, here we assume you'll use a laptop.
 It's straightforward to install the 32-bit ARM C/C++ cross-compiler on popular operating systems.
 
 Please follow the section relevant to your laptop operating system.
