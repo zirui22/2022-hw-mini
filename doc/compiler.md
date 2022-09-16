@@ -40,23 +40,29 @@ please install a newer CMake via [scripts/install_cmake_linux.sh](../scripts/ins
 
 ## Windows
 
-The Visual Studio cross-compiler setup is described in Section 9.2 of the
-[Pico install guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf).
-We choose to use Windows Subsystem for Linux (WSL) instead, which is useful for many projects.
-Sometimes WSL is the only feasible way to work with non-Windows projects on Windows.
-[WSL install](https://docs.microsoft.com/en-us/windows/wsl/install) from Windows Commant Prompt:
+Windows Subsystem for Linux (WSL) is useful for many projects including the Raspberry Pi Pico SDK.
+WSL can be the easiest way to work with non-Windows projects on Windows.
 
-```sh
-wsl --install
-```
+The Ubuntu WSL process takes about 10 minutes depending on download speed.
+WSL can be installed either via (pick one):
 
-This defaults to Ubuntu Linux distribution on WSL.
-This process takes 10-20 minutes depending on download speed.
+* [Ubuntu Windows Store app](https://apps.microsoft.com/store/detail/ubuntu-22041-lts/9PN20MSR04DW)
+* [Ubuntu WSL install](https://docs.microsoft.com/en-us/windows/wsl/install) from Windows Command Prompt: `wsl --install`  (this method may not work on Windows 10)
 
-[WSL can use](https://docs.microsoft.com/en-us/windows/wsl/filesystems)
-the native Windows filesystem and vice versa.
+[WSL can access](https://docs.microsoft.com/en-us/windows/wsl/filesystems)
+the native Windows filesystem.
+WSL sees the native Windows filesystem "C:" in WSL via "/mnt/c".
+To make it easier to copy files to the Pico, we suggest for this project to use the native Windows drive under "/mnt/c" from WSL.
+Then you can use Windows File Explorer to
+[drag and drop .uf2 file to Pico](./upload.md).
 
 The cross-compiler install on WSL Ubuntu is just like plain Linux in the section above.
 
-To make switching between Windows and WSL easier, we generally use
+To make switching between Windows and WSL easier, we optionally use
 [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/install).
+
+### Alternative: Visual Studio
+
+The Visual Studio cross-compiler setup is described in Section 9.2 of the
+[Pico install guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf).
+I used WSL as above instead.
