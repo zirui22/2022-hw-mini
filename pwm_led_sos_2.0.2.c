@@ -29,7 +29,6 @@
 void on_pwm_wrap() {
     
     //sos equals in morse code is repersented by '...---...'
-    //since C doesn't recognize '.' and '-'. We use 'd' to repersent '.' and 'l' to repersent '-'
     static char str[] = "...---...";
     int count = 0;
     do{
