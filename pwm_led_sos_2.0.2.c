@@ -28,7 +28,7 @@
 
 void on_pwm_wrap() {
     
-    //sos equals in morse code is repersented by '...---...'
+    //sos in morse code is repersented by '...---...'
     static char str[] = "...---...";
     int count = 0;
     do{
@@ -45,7 +45,8 @@ void on_pwm_wrap() {
         }
         count++;
 
-        //PWM level ranges from 10Hz to 8kHz
+        //Light will turn on when PWM level is 8kHz
+        //LED light will turn off when PWM level is 10Hz
         pwm_set_gpio_level(PICO_DEFAULT_LED_PIN, 8000);
         busy_wait_ms (on_time);
         pwm_set_gpio_level(PICO_DEFAULT_LED_PIN, 30);
